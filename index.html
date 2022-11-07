@@ -1,0 +1,83 @@
+<style>
+body{
+    position: absolute;
+}
+.logo{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.search{
+    outline: none;
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+button{
+    outline: none;
+}
+.button1{
+    position: fixed;
+    top: 52%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+}
+.button2{
+    position: fixed;
+    top: 52%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+}
+</style>
+<html>
+<head>
+    <title>Google!</title>
+</head>
+<body>
+<center>
+    <img class="logo" src="google/google.jpg">
+    <input type="text" class="search" id="src" placeholder="Type to Search with FrogFind">
+    <input type="submit" value="Frog Find Search" class="button1" onclick="search()"> <button class="button2" onclick="lucky()">I'm Feeling Lucky</button>
+    <a href="google/search/index.html"><button>Temp Button - Go to Results page</button></a>
+    <a href="projects/index.html"><button>Temp Button - Go to Projects page</button></a>
+</center>
+
+</body>
+</html>
+<script>
+    //Accept enter for confirming search.
+    var searchbar = document.getElementById('src');
+    document.addEventListener("keypress", function(event) {
+  if (event.keyCode == 13) {
+    if(searchbar.value)
+    {
+        search();
+    }
+    if(searchbar.value == null)
+    {
+        return;
+    }
+  }
+});
+    function search(){
+        var searchbar = document.getElementById("src").value;
+        //Crude version for idea.
+        //If Search Bar is full search , else , dont search.
+    if(searchbar)
+    {
+        window.location.href="http://frogfind.com/?q=" + searchbar;
+    }
+    if(searchbar == null)
+    {
+        return;
+    }
+
+    }
+    //I'm feeling lucky page.
+    function lucky(){
+        window.location.href="https://webring.theoldnet.com/";
+    }
+</script>
